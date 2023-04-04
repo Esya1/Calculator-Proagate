@@ -5,9 +5,14 @@ function allclear(){
 
 }
 
-function show(n){
-    display.value +=n;
-    
+function show(value){
+  if (value === "%") {
+    const currentValue = parseFloat(display.value);
+    const percentageValue = currentValue / 100;
+    display.value = percentageValue;
+  } else {
+    display.value += value;
+  }
 }
 
 function calc(){
